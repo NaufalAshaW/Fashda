@@ -46,44 +46,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="40dp"
-        android:elevation="5dp"
-        android:orientation="horizontal"
-        android:background="@drawable/rect_shape">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/main_green">
-
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:text="17"
-                android:textSize="24dp"
-                android:layout_marginHorizontal="12dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:text="Today"
-                android:textSize="14dp"
-                android:layout_marginHorizontal="6dp"
-                />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
     <FrameLayout
         android:id="@+id/main_frame"
         android:layout_width="match_parent"

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="35dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/wtImage"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_marginBottom="24dp"
+            tools:src="Fashda" />
+
+        <TextView
+            android:id="@+id/wtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/grey_800"
+            android:lineSpacingMultiplier="0"
+            android:lineSpacingExtra="36sp"
+            tools:text="Fashda"
+            android:textSize="24dp"/>
+
+        <TextView
+            android:id="@+id/wtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_reg"
+            android:textColor="@color/grey_700"
+            android:lineSpacingExtra="4sp"
+            android:gravity="center"
+            android:textSize="14dp"
+            tools:text="Find prayer times based on the location"/>
+
+    </LinearLayout>
+
+</FrameLayout>
