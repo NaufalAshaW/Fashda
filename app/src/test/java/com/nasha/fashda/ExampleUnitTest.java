@@ -1,4 +1,4 @@
-package com.example.fashda;
+package com.nasha.fashda;
 
 import org.junit.Test;
 
