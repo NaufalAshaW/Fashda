@@ -42,19 +42,19 @@ public class PrayerFragment extends Fragment implements PrayerView {
         if(view != null) {
             final TimingsModel timings = prayData.getTimings();
             fajr.setText(
-                    String.format("Subuh: %s", timings.getFajr())
+                    String.format("Fajr: %s", timings.getFajr())
             );
             duhr.setText(
-                    String.format("Dzuhur: %s", timings.getDhuhr())
+                    String.format("Dhuhr: %s", timings.getDhuhr())
             );
             ashr.setText(
-                    String.format("Ashar: %s", timings.getAsr())
+                    String.format("Asr: %s", timings.getAsr())
             );
             maghrib.setText(
                     String.format("Maghrib: %s", timings.getMaghrib())
             );
             isha.setText(
-                    String.format("Isya: %s", timings.getIsha())
+                    String.format("Isha: %s", timings.getIsha())
             );
             view.setVisibility(View.VISIBLE);
         }

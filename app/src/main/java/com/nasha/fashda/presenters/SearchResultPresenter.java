@@ -6,15 +6,19 @@ import android.util.Log;
 
 import com.nasha.fashda.API.ApiEndpoint;
 import com.nasha.fashda.API.ApiService;
+import com.nasha.fashda.models.PlaceModel;
 import com.nasha.fashda.models.PrayModel;
 import com.nasha.fashda.models.PrayResponseModel;
 import com.nasha.fashda.views.MainView;
+import com.nasha.fashda.views.MosqueView;
 import com.nasha.fashda.views.PrayerView;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -23,7 +27,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SearchResultPresenter {
+    private List<PlaceModel> places = new ArrayList<>();
     private PrayModel prayModel;
+    private MosqueView mosqueView;
     private PrayerView prayerView;
     private Context context;
     private ApiService api;
@@ -36,8 +42,21 @@ public class SearchResultPresenter {
 
         api = ApiEndpoint.getPrayClient().create(ApiService.class);
 
+    }
+
+    public SearchResultPresenter(MosqueView mosqueView){
+        this.mosqueView = mosqueView;
+
+        api = ApiEndpoint.getPlaceClient().create(ApiService.class);
+
+
 
     }
+
+    public void fetchPlaceData(){
+
+    }
+
     public void fetchPrayData(double latitude, double longitude){
         Map<String, String> options = new HashMap<>();
         options.put("latitude",String.valueOf(latitude));

@@ -24,22 +24,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:fontFamily="@font/roboto_bold"
             android:textColor="@color/grey_800"
             android:lineSpacingMultiplier="0"
             android:lineSpacingExtra="36sp"
             tools:text="Fashda"
-            android:textSize="24dp"/>
+            style="@style/Theme.Fashda.TextBold24"/>
 
         <TextView
             android:id="@+id/wtDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_reg"
             android:textColor="@color/grey_700"
             android:lineSpacingExtra="4sp"
             android:gravity="center"
-            android:textSize="14dp"
+            style="@style/Theme.Fashda.TextRegular14"
             tools:text="Find prayer times based on the location"/>
 
     </LinearLayout>

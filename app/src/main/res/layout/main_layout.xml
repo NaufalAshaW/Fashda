@@ -19,14 +19,15 @@
             android:layout_height="wrap_content"
             android:text="Fashda"
             android:layout_marginLeft="15dp"
-            android:textSize="20dp"/>
+            style="@style/Theme.Fashda.TextBold24"
+            android:textColor="@color/grey_800"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="15dp"
             android:text="Find prayer time and mosque based on the location"
-            android:textSize="14dp"/>
+            style="@style/Theme.Fashda.TextRegular14"/>
 
         <LinearLayout
             android:layout_width="match_parent"

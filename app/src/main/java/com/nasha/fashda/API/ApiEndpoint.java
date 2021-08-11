@@ -59,7 +59,7 @@ public class ApiEndpoint {
             // init retrofit
             Gson gson = new GsonBuilder().setLenient().create();
             placeRetrofit = new Retrofit.Builder()
-                    .baseUrl(ApiConfig.BASE_URL)
+                    .baseUrl(ApiConfig.PLACE_BASE_URL)
                     .client(httpClient)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();

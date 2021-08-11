@@ -14,4 +14,45 @@
         <!-- Customize your theme here. -->
         <item name="fontFamily">@font/roboto_reg</item>
     </style>
+    <style name="Theme.Fashda.FontBold">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="Theme.Fashda.FontRegular">
+        <item name="fontFamily">@font/roboto_reg</item>
+    </style>
+
+    <style name="Theme.Fashda.TextBold12" parent="Theme.Fashda.FontBold">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Theme.Fashda.TextBold14" parent="Theme.Fashda.FontBold">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Theme.Fashda.TextBold16" parent="Theme.Fashda.FontBold">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Theme.Fashda.TextBold24" parent="Theme.Fashda.FontBold">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Theme.Fashda.TextRegular12" parent="Theme.Fashda.FontRegular">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Theme.Fashda.TextRegular14" parent="Theme.Fashda.FontRegular">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Theme.Fashda.TextRegular16" parent="Theme.Fashda.FontRegular">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Theme.Fashda.ShapeApperanceOverlay.PlaceThumbnail" parent="">
+        <item name="cornerSize">8dp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">#f2f2f2</item>
+    </style>
 </resources>
