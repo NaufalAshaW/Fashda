@@ -4,12 +4,11 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nasha.fashda.MosqueDetail;
+import com.nasha.fashda.MosqueDetailActivity;
 import com.nasha.fashda.R;
 import com.nasha.fashda.databinding.MosqueItemBinding;
 import com.nasha.fashda.models.PhotoModel;
@@ -59,7 +58,7 @@ public class MosqueAdapter extends RecyclerView.Adapter<MosqueAdapter.ViewHolder
             binding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(binding.getRoot().getContext(), MosqueDetail.class);
+                    Intent intent = new Intent(binding.getRoot().getContext(), MosqueDetailActivity.class);
                     intent.putExtra("place_id", data.getPlaceId());
                     intent.putExtra("place_name", data.getPlaceName());
 

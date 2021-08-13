@@ -9,22 +9,16 @@
         android:roundIcon="@drawable/ic_window"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fashda">
-        <activity android:name=".WalkthroughActivity"></activity>
-        <activity android:name=".MosqueDetail"></activity>
-        <activity android:name=".SplashActivity">
+        <activity android:name=".WalkthroughActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".MosqueDetailActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".SplashActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.nasha.fashda.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.nasha.fashda.MainActivity"/>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.nasha.fashda;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private PrayerSearchResultPresenter prayerSearchResultPresenter;
     private MosqueSearchResultPresenter mosqueSearchResultPresenter;
     private Button findBtn;
+    private FragmentManager fragmentManager;
     private PrayerFragment prayerFragment;
     private MosqueFragment mosqueFragment;
     MeowBottomNavigation meowNav;
@@ -40,8 +42,18 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.main_layout);
 
+
+
+        fragmentManager = getSupportFragmentManager();
         prayerFragment = new PrayerFragment();
         mosqueFragment = new MosqueFragment();
+
+        fragmentManager.beginTransaction()
+                .add(R.id.main_frame, prayerFragment)
+                .add(R.id.main_frame, mosqueFragment)
+                .hide(mosqueFragment)
+                .commit();
+
         prayerSearchResultPresenter = new PrayerSearchResultPresenter(prayerFragment);
         mosqueSearchResultPresenter = new MosqueSearchResultPresenter(mosqueFragment);
 
@@ -71,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                         ", " +place.getLatLng().longitude);
                 prayerSearchResultPresenter.fetchPrayData(place.getLatLng().latitude,place.getLatLng().longitude);
                 mosqueSearchResultPresenter.fetchPlaceData(place.getLatLng().latitude,place.getLatLng().longitude);
-                
+
             }
 
             @Override
@@ -88,13 +100,19 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getId()){
                     case 1 :
-                        fragment = prayerFragment;
+                        fragmentManager.beginTransaction()
+                                .show(prayerFragment)
+                                .hide(mosqueFragment).commit();
+//                        fragment = prayerFragment;
                         break;
                     case 2 :
-                        fragment = mosqueFragment;
+                        fragmentManager.beginTransaction()
+                                .show(mosqueFragment)
+                                .hide(prayerFragment).commit();
+//                        fragment = mosqueFragment;
                         break;
                 }
-                loadFragment(fragment);
+//                loadFragment(fragment);
             }
         });
         meowNav.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
@@ -104,13 +122,19 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getId()){
                     case 1 :
-                        fragment = prayerFragment;
+                        fragmentManager.beginTransaction()
+                                .show(prayerFragment)
+                                .hide(mosqueFragment).commit();
+//                        fragment = prayerFragment;
                         break;
                     case 2 :
-                        fragment = mosqueFragment;
+                        fragmentManager.beginTransaction()
+                                .show(mosqueFragment)
+                                .hide(prayerFragment).commit();
+//                        fragment = mosqueFragment;
                         break;
                 }
-                loadFragment(fragment);
+//                loadFragment(fragment);
             }
         });
         meowNav.setOnShowListener(new MeowBottomNavigation.ShowListener() {
@@ -120,13 +144,19 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getId()){
                     case 1 :
-                        fragment = prayerFragment;
+                        fragmentManager.beginTransaction()
+                                .show(prayerFragment)
+                                .hide(mosqueFragment).commit();
+//                        fragment = prayerFragment;
                         break;
                     case 2 :
-                        fragment = mosqueFragment;
+                        fragmentManager.beginTransaction()
+                                .show(mosqueFragment)
+                                .hide(prayerFragment).commit();
+//                        fragment = mosqueFragment;
                         break;
                 }
-                loadFragment(fragment);
+//                loadFragment(fragment);
             }
         });
         meowNav.show(1,true);

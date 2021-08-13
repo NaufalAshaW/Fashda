@@ -24,7 +24,6 @@ public class MosqueFragment extends Fragment implements MosqueView {
     private List<PlaceModel> mosqueResults= new ArrayList<>();
     private FragmentMosqueBinding fragmentMosqueBinding;
     private MosqueAdapter mosqueAdapter;
-    private MosqueSearchResultPresenter mosqueSearchResultPresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,8 +31,6 @@ public class MosqueFragment extends Fragment implements MosqueView {
 
         fragmentMosqueBinding = FragmentMosqueBinding.inflate(getLayoutInflater());
         View view = fragmentMosqueBinding.getRoot();
-
-//        mosqueSearchResultPresenter = new MosqueSearchResultPresenter(this);
 
         mosqueAdapter = new MosqueAdapter(mosqueResults);
         fragmentMosqueBinding.rvMosque.setAdapter(mosqueAdapter);
@@ -43,14 +40,6 @@ public class MosqueFragment extends Fragment implements MosqueView {
 
 
     }
-
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//        this.view = view;
-//
-//
-//    }
 
     @Override
     public FragmentMosqueBinding getBinding() {

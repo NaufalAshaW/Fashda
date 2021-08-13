@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,10 +19,13 @@ import com.nasha.fashda.views.PrayerView;
 public class PrayerFragment extends Fragment implements PrayerView {
     private TextView fajr, duhr, ashr, maghrib, isha;
     private View view;
+    private PrayModel prayData;
+    private LinearLayout prayTimeWrapper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_prayer,container,false);
+        View view = inflater.inflate(R.layout.fragment_prayer, container, false);
+        prayTimeWrapper = view.findViewById(R.id.prayTimeWrapper);
         return view;
     }
 
@@ -34,11 +38,14 @@ public class PrayerFragment extends Fragment implements PrayerView {
         ashr = view.findViewById(R.id.ashr);
         maghrib = view.findViewById(R.id.maghrib);
         isha = view.findViewById(R.id.isha);
-        view.setVisibility(View.GONE);
+
+        prayTimeWrapper.setVisibility(View.GONE);
     }
 
     @Override
     public void onPrayDataLoad(PrayModel prayData) {
+        this.prayData = prayData;
+
         if(view != null) {
             final TimingsModel timings = prayData.getTimings();
             fajr.setText(
@@ -56,7 +63,7 @@ public class PrayerFragment extends Fragment implements PrayerView {
             isha.setText(
                     String.format("Isha: %s", timings.getIsha())
             );
-            view.setVisibility(View.VISIBLE);
+            prayTimeWrapper.setVisibility(View.VISIBLE);
         }
     }
 }
