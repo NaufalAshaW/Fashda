@@ -8,6 +8,5 @@ public interface ApiConfig {
     String PATH_NEARBY_SEARCH = "place/nearbysearch/json";
     String PATH_PLACE_DETAIL = "place/details/json";
     String PATH_PHOTO = "place/photo";
-    String DUMMY_LOCATION = "-6.9003965,106.838906";
 
 }

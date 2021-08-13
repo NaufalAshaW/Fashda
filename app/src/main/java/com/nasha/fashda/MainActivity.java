@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
-import android.widget.Button;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.google.android.gms.common.api.Status;
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     private PrayerSearchResultPresenter prayerSearchResultPresenter;
     private MosqueSearchResultPresenter mosqueSearchResultPresenter;
-    private Button findBtn;
     private FragmentManager fragmentManager;
     private PrayerFragment prayerFragment;
     private MosqueFragment mosqueFragment;
@@ -42,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.main_layout);
 
-
-
+        //Keeping the fragment alive
         fragmentManager = getSupportFragmentManager();
         prayerFragment = new PrayerFragment();
         mosqueFragment = new MosqueFragment();
@@ -54,14 +51,17 @@ public class MainActivity extends AppCompatActivity {
                 .hide(mosqueFragment)
                 .commit();
 
+        //Presenters
         prayerSearchResultPresenter = new PrayerSearchResultPresenter(prayerFragment);
         mosqueSearchResultPresenter = new MosqueSearchResultPresenter(mosqueFragment);
 
+        //Bottom Nav
         meowNav = findViewById(R.id.nav);
         meowNav.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_access_time_24));
         meowNav.add(new MeowBottomNavigation.Model(2,R.drawable.ic_baseline_place_24));
 
 
+        //Places Autocomplete
         if (!Places.isInitialized()) {
             Places.initialize(getApplicationContext(), ApiConfig.API_KEY, Locale.US);
         }
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Bottom Nav Listeners
         meowNav.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
@@ -103,16 +104,13 @@ public class MainActivity extends AppCompatActivity {
                         fragmentManager.beginTransaction()
                                 .show(prayerFragment)
                                 .hide(mosqueFragment).commit();
-//                        fragment = prayerFragment;
                         break;
                     case 2 :
                         fragmentManager.beginTransaction()
                                 .show(mosqueFragment)
                                 .hide(prayerFragment).commit();
-//                        fragment = mosqueFragment;
                         break;
                 }
-//                loadFragment(fragment);
             }
         });
         meowNav.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
@@ -125,16 +123,13 @@ public class MainActivity extends AppCompatActivity {
                         fragmentManager.beginTransaction()
                                 .show(prayerFragment)
                                 .hide(mosqueFragment).commit();
-//                        fragment = prayerFragment;
                         break;
                     case 2 :
                         fragmentManager.beginTransaction()
                                 .show(mosqueFragment)
                                 .hide(prayerFragment).commit();
-//                        fragment = mosqueFragment;
                         break;
                 }
-//                loadFragment(fragment);
             }
         });
         meowNav.setOnShowListener(new MeowBottomNavigation.ShowListener() {
@@ -147,16 +142,13 @@ public class MainActivity extends AppCompatActivity {
                         fragmentManager.beginTransaction()
                                 .show(prayerFragment)
                                 .hide(mosqueFragment).commit();
-//                        fragment = prayerFragment;
                         break;
                     case 2 :
                         fragmentManager.beginTransaction()
                                 .show(mosqueFragment)
                                 .hide(prayerFragment).commit();
-//                        fragment = mosqueFragment;
                         break;
                 }
-//                loadFragment(fragment);
             }
         });
         meowNav.show(1,true);

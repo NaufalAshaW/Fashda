@@ -14,9 +14,6 @@ public class NearbySearchResponseModel {
     @SerializedName("info_messages")
     private String[] infoMessages;
 
-    @SerializedName("next_page_token")
-    private String nextPageToken;
-
     public NearbySearchResponseModel(String status, String[] infoMessages) {
         this.status = status;
         this.infoMessages = infoMessages;
@@ -46,11 +43,4 @@ public class NearbySearchResponseModel {
         this.infoMessages = infoMessages;
     }
 
-    public String getNextPageToken() {
-        return nextPageToken;
-    }
-
-    public void setNextPageToken(String nextPageToken) {
-        this.nextPageToken = nextPageToken;
-    }
 }

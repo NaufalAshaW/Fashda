@@ -94,12 +94,12 @@ public class MosqueDetailActivity extends AppCompatActivity implements MosqueDet
             public void onClick(View v) {
                 if (mosque != null) {
                     if (mosque.getGeometry() != null) {
-                        Uri gmnUri = Uri.parse(
+                        Uri gmap = Uri.parse(
                                 String.format("google.navigation:q=%s,%s",
                                         mosque.getGeometry().getLocation().getLat(),
                                         mosque.getGeometry().getLocation().getLng())
                         );
-                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmnUri);
+                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmap);
                         mapIntent.setPackage("com.google.android.apps.maps");
 
                         if (mapIntent.resolveActivity(getPackageManager()) != null) {
@@ -150,9 +150,9 @@ public class MosqueDetailActivity extends AppCompatActivity implements MosqueDet
         parsePhotos();
 
         binding.address.setText(mosque.getFormattedAddress());
-        binding.placeDistance.setText(
-                String.format("%.1fkm from your location", mosque.getDistance() / 1000)
-        );
+//        binding.placeDistance.setText(
+//                String.format("%.1fkm from your location", mosque.getDistance() / 1000)
+//        );
     }
 
     @Override

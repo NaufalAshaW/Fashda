@@ -7,16 +7,11 @@ public class PlaceModel {
     @SerializedName("name")
     private String placeName;
 
-    private double distance;
-
     @SerializedName("place_id")
     private String placeId;
 
     @SerializedName("photos")
     private PhotoModel[] photos;
-
-    @SerializedName("vicinity")
-    private String vicinity;
 
     @SerializedName("geometry")
     private GeometryModel geometry;
@@ -30,15 +25,9 @@ public class PlaceModel {
     @SerializedName("url")
     private String url;
 
-    @SerializedName("business_status")
-    private String businessStatus;
-
-    @SerializedName("opening_hours")
-    private OpeningHourModel openingHours;
 
     private String thumbnail;
     private String address;
-    private String date;
 
     public String getPlaceName() {
         return placeName;
@@ -46,14 +35,6 @@ public class PlaceModel {
 
     public void setPlaceName(String placeName) {
         this.placeName = placeName;
-    }
-
-    public double getDistance() {
-        return distance;
-    }
-
-    public void setDistance(double distance) {
-        this.distance = distance;
     }
 
     public String getPlaceId() {
@@ -70,14 +51,6 @@ public class PlaceModel {
 
     public void setPhotos(PhotoModel[] photos) {
         this.photos = photos;
-    }
-
-    public String getVicinity() {
-        return vicinity;
-    }
-
-    public void setVicinity(String vicinity) {
-        this.vicinity = vicinity;
     }
 
     public GeometryModel getGeometry() {
@@ -112,22 +85,6 @@ public class PlaceModel {
         this.url = url;
     }
 
-    public String getBusinessStatus() {
-        return businessStatus;
-    }
-
-    public void setBusinessStatus(String businessStatus) {
-        this.businessStatus = businessStatus;
-    }
-
-    public OpeningHourModel getOpeningHours() {
-        return openingHours;
-    }
-
-    public void setOpeningHours(OpeningHourModel openingHours) {
-        this.openingHours = openingHours;
-    }
-
     public String getThumbnail() {
         return thumbnail;
     }
@@ -144,11 +101,4 @@ public class PlaceModel {
         this.address = address;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
 }

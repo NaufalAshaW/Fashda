@@ -5,15 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.nasha.fashda.Adapter.MosqueAdapter;
 import com.nasha.fashda.databinding.FragmentMosqueBinding;
 import com.nasha.fashda.models.PlaceModel;
-import com.nasha.fashda.presenters.MosqueSearchResultPresenter;
 import com.nasha.fashda.views.MosqueView;
 
 import java.util.ArrayList;
@@ -27,7 +23,6 @@ public class MosqueFragment extends Fragment implements MosqueView {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.fragment_mosque,container,false);
 
         fragmentMosqueBinding = FragmentMosqueBinding.inflate(getLayoutInflater());
         View view = fragmentMosqueBinding.getRoot();
@@ -36,8 +31,6 @@ public class MosqueFragment extends Fragment implements MosqueView {
         fragmentMosqueBinding.rvMosque.setAdapter(mosqueAdapter);
 
         return view;
-
-
 
     }
 

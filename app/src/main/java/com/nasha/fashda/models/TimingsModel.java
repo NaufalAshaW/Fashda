@@ -7,9 +7,6 @@ public class TimingsModel {
     @SerializedName("Fajr")
     private String fajr;
 
-    @SerializedName("Sunrise")
-    private String sunrise;
-
     @SerializedName("Dhuhr")
     private String dhuhr;
 
@@ -25,26 +22,12 @@ public class TimingsModel {
     @SerializedName("Isha")
     private String isha;
 
-    @SerializedName("Imsak")
-    private String imsak;
-
-    @SerializedName("Midnight")
-    private String midnight;
-
     public String getFajr() {
         return fajr;
     }
 
     public void setFajr(String fajr) {
         this.fajr = fajr;
-    }
-
-    public String getSunrise() {
-        return sunrise;
-    }
-
-    public void setSunrise(String sunrise) {
-        this.sunrise = sunrise;
     }
 
     public String getDhuhr() {
@@ -87,19 +70,4 @@ public class TimingsModel {
         this.isha = isha;
     }
 
-    public String getImsak() {
-        return imsak;
-    }
-
-    public void setImsak(String imsak) {
-        this.imsak = imsak;
-    }
-
-    public String getMidnight() {
-        return midnight;
-    }
-
-    public void setMidnight(String midnight) {
-        this.midnight = midnight;
-    }
 }
