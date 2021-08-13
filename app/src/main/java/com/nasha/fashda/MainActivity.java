@@ -1,15 +1,10 @@
 package com.nasha.fashda;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.ContextMenu;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
@@ -17,12 +12,11 @@ import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.Autocomplete;
-import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 import com.nasha.fashda.API.ApiConfig;
-import com.nasha.fashda.presenters.SearchResultPresenter;
+import com.nasha.fashda.presenters.MosqueSearchResultPresenter;
+import com.nasha.fashda.presenters.PrayerSearchResultPresenter;
 
 import java.util.Arrays;
 import java.util.Locale;
@@ -31,7 +25,8 @@ import static android.content.ContentValues.TAG;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SearchResultPresenter searchResultPresenter;
+    private PrayerSearchResultPresenter prayerSearchResultPresenter;
+    private MosqueSearchResultPresenter mosqueSearchResultPresenter;
     private Button findBtn;
     private PrayerFragment prayerFragment;
     private MosqueFragment mosqueFragment;
@@ -47,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         prayerFragment = new PrayerFragment();
         mosqueFragment = new MosqueFragment();
-        searchResultPresenter = new SearchResultPresenter(prayerFragment);
+        prayerSearchResultPresenter = new PrayerSearchResultPresenter(prayerFragment);
+        mosqueSearchResultPresenter = new MosqueSearchResultPresenter(mosqueFragment);
 
         meowNav = findViewById(R.id.nav);
         meowNav.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_access_time_24));
@@ -71,9 +67,11 @@ public class MainActivity extends AppCompatActivity {
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 Log.i(TAG, "Place: " + place.getName() + ", " + place.getId() +
-                        ", " + place.getLatLng().latitude +
+                        ", " +place.getLatLng().latitude +
                         ", " +place.getLatLng().longitude);
-                searchResultPresenter.fetchPrayData(place.getLatLng().latitude,place.getLatLng().longitude);
+                prayerSearchResultPresenter.fetchPrayData(place.getLatLng().latitude,place.getLatLng().longitude);
+                mosqueSearchResultPresenter.fetchPlaceData(place.getLatLng().latitude,place.getLatLng().longitude);
+                
             }
 
             @Override

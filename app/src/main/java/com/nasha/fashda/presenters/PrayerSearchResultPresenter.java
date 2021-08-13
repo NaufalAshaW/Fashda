@@ -4,17 +4,20 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.maps.model.LatLng;
 import com.nasha.fashda.API.ApiEndpoint;
 import com.nasha.fashda.API.ApiService;
+import com.nasha.fashda.models.NearbySearchResponseModel;
 import com.nasha.fashda.models.PlaceModel;
 import com.nasha.fashda.models.PrayModel;
 import com.nasha.fashda.models.PrayResponseModel;
-import com.nasha.fashda.views.MainView;
 import com.nasha.fashda.views.MosqueView;
 import com.nasha.fashda.views.PrayerView;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -26,36 +29,24 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SearchResultPresenter {
-    private List<PlaceModel> places = new ArrayList<>();
+public class PrayerSearchResultPresenter {
+
     private PrayModel prayModel;
-    private MosqueView mosqueView;
     private PrayerView prayerView;
     private Context context;
     private ApiService api;
+    private boolean isLoading;
 
 
     public static PrayResponseModel body;
 
-    public SearchResultPresenter(PrayerView prayerView){
+    public PrayerSearchResultPresenter(PrayerView prayerView){
         this.prayerView = prayerView;
 
         api = ApiEndpoint.getPrayClient().create(ApiService.class);
-
     }
 
-    public SearchResultPresenter(MosqueView mosqueView){
-        this.mosqueView = mosqueView;
 
-        api = ApiEndpoint.getPlaceClient().create(ApiService.class);
-
-
-
-    }
-
-    public void fetchPlaceData(){
-
-    }
 
     public void fetchPrayData(double latitude, double longitude){
         Map<String, String> options = new HashMap<>();

@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fashda">
         <activity android:name=".WalkthroughActivity"></activity>
+        <activity android:name=".MosqueDetail"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
