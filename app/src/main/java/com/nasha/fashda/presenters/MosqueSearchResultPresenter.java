@@ -31,21 +31,6 @@ public class MosqueSearchResultPresenter {
         this.mosqueView = mosqueView;
 
         api = ApiEndpoint.getPlaceClient().create(ApiService.class);
-//        mosqueView.getBinding().rvMosque.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//            @Override
-//            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-//                super.onScrolled(recyclerView, dx, dy);
-//                if (mosqueBody == null) return;
-//
-//                LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-//                if (!isLoading && mosqueBody.getNextPageToken()!= null){
-//                    if (layoutManager != null && layoutManager.findLastVisibleItemPosition() == mosquePlaces.size()-1){
-//                        fetchPlaceData(mosqueBody.getNextPageToken());
-//                    }
-//
-//                }
-//            }
-//        });
 
     }
 

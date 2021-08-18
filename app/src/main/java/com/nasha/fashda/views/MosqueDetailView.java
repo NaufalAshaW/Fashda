@@ -5,6 +5,7 @@ import com.nasha.fashda.models.PlaceModel;
 
 public interface MosqueDetailView {
     void onLoad(PlaceModel mosqueData);
+
     ActivityMosqueDetailBinding getBinding();
 
     String getPlaceId();

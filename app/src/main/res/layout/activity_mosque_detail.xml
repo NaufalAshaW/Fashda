@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/mosque"
+                android:src="@drawable/placeholder_mosque"
                 android:contentDescription="Photo"
                 app:layout_collapseMode="parallax"/>
 
@@ -101,16 +101,6 @@
                         app:layout_constraintStart_toEndOf="@+id/icMapMarker"
                         app:layout_constraintTop_toTopOf="@+id/icMapMarker" />
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/placeDistance"-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="8dp"-->
-<!--                        tools:text="2km from your location"-->
-<!--                        android:textAppearance="@style/Theme.Fashda.TextRegular12"-->
-<!--                        android:textColor="@color/grey_900"-->
-<!--                        app:layout_constraintStart_toStartOf="@+id/address"-->
-<!--                        app:layout_constraintTop_toBottomOf="@+id/address" />-->
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>

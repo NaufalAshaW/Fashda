@@ -7,6 +7,6 @@
     android:layout_height="120dp"
     android:layout_marginEnd="16dp"
     android:scaleType="centerCrop"
-    tools:src="@drawable/mosque"
+    tools:src="@drawable/placeholder_mosque"
     app:shapeAppearance="?attr/shapeAppearanceMediumComponent"
     app:shapeAppearanceOverlay="@style/Theme.Fashda.ShapeApperanceOverlay.PlaceThumbnail" />

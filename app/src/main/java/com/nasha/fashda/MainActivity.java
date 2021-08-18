@@ -154,8 +154,8 @@ public class MainActivity extends AppCompatActivity {
         meowNav.show(1,true);
     }
 
-    private void loadFragment(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,fragment).commit();
-    }
+//    private void loadFragment(Fragment fragment) {
+//        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,fragment).commit();
+//    }
 }
 

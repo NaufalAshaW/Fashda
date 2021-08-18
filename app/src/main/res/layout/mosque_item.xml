@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearance="?attr/shapeAppearanceMediumComponent"
             app:shapeAppearanceOverlay="@style/Theme.Fashda.ShapeApperanceOverlay.PlaceThumbnail"
-            tools:src="@drawable/mosque" />
+            tools:src="@drawable/placeholder_mosque" />
 
         <TextView
             android:id="@+id/placeName"

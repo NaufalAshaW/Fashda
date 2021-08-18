@@ -35,7 +35,6 @@ public class PrayerSearchResultPresenter {
     private PrayerView prayerView;
     private Context context;
     private ApiService api;
-    private boolean isLoading;
 
 
     public static PrayResponseModel body;
@@ -46,7 +45,9 @@ public class PrayerSearchResultPresenter {
         api = ApiEndpoint.getPrayClient().create(ApiService.class);
     }
 
-
+    public void setContext(Context context) {
+        this.context = context;
+    }
 
     public void fetchPrayData(double latitude, double longitude){
         Map<String, String> options = new HashMap<>();

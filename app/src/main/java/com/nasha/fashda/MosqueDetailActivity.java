@@ -52,10 +52,10 @@ public class MosqueDetailActivity extends AppCompatActivity implements MosqueDet
             if (placePhotoUrl != null) {
                 Picasso.get()
                         .load(placePhotoUrl)
-                        .placeholder(R.color.orange_500)
+                        .placeholder(R.color.main_green)
                         .into(binding.placePhoto);
             } else {
-                binding.placePhoto.setImageResource(R.drawable.mosque);
+                binding.placePhoto.setImageResource(R.drawable.placeholder_mosque);
             }
         }
 
@@ -108,7 +108,7 @@ public class MosqueDetailActivity extends AppCompatActivity implements MosqueDet
                         } else {
                             new AlertDialog.Builder(MosqueDetailActivity.this)
                                     .setTitle("Notification")
-                                    .setMessage("Google Maps is not installed")
+                                    .setMessage("Google Map is not installed")
                                     .setPositiveButton("Ok", null)
                                     .create().show();
                         }
@@ -148,11 +148,7 @@ public class MosqueDetailActivity extends AppCompatActivity implements MosqueDet
     public void onLoad(PlaceModel mosqueData) {
         mosque = mosqueData;
         parsePhotos();
-
         binding.address.setText(mosque.getFormattedAddress());
-//        binding.placeDistance.setText(
-//                String.format("%.1fkm from your location", mosque.getDistance() / 1000)
-//        );
     }
 
     @Override
